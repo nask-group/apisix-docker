@@ -23,13 +23,13 @@ apisix:
     - 0.0.0.0/0              # We need to restrict ip access rules for security. 0.0.0.0/0 is for test.
 
   admin_key:
-    - name: "admin"
-      key: edd1c9f034335f136f87ad84b625c8f1
+    - name: "ikare"
+      key: ikare_api_key_20220530
       role: admin                 # admin: manage all configuration data
                                   # viewer: only can view configuration data
-    - name: "viewer"
-      key: 4054f7cf07e344346cd3f287985e76a2
-      role: viewer
+    # - name: "viewer"
+    #   key: 4054f7cf07e344346cd3f287985e76a2
+    #   role: viewer
   
   enable_control: true
   control:
