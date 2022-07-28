@@ -37,7 +37,16 @@ apisix:
     port: 9092
     
   proxy_cache:
-    cache_ttl: 0s 
+    cache_ttl: 0s
+
+  nginx_config:                     # config for render the template to generate nginx.conf
+    http:
+      upstream:
+      keepalive: 1                  # Sets the maximum number of idle keepalive connections to upstream servers that are preserved in the cache of each worker process.
+                                    # When this number is exceeded, the least recently used connections are closed.
+      keepalive_requests: 1         # Sets the maximum number of requests that can be served through one keepalive connection.
+                                    # After the maximum number of requests is made, the connection is closed.
+      keepalive_timeout: 0s         # Sets a timeout during which an idle keepalive connection to an upstream server will stay open.
 
 etcd:
   host:                           # it's possible to define multiple etcd hosts addresses of the same etcd cluster.
